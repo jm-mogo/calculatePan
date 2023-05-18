@@ -1,12 +1,21 @@
-//Inputs
+//inputsPan
 const inputName = document.getElementById('panName');
 const inputQuantity = document.getElementById("quantity");
+const inputDiscount = document.getElementById('discount-percentage');
+
+//inputsClientInfo 
+const clientsName = document.getElementById('client-name');
+const phoneNumber = document.getElementById('phone');
+const clientsAddress =document.getElementById('address');
 
 //buttons 
 const btnAddItem = document.getElementById("btn-add-item");
+const btnAddClient = document.getElementById("add-client-info") 
 
 //Dom manipulation
 const itemsTable = document.getElementById("items-table");
+const totalTable = document.getElementById("total-table");
+const clientInfoTabl = document.getElementById("client-info-table");
 
 //Factory function to create pan types
 const pan = (name, price) => {
@@ -46,22 +55,50 @@ function addItems() {
     if (!checkInputs()) {
         return
     }
-    if (checkItemInList(inputName.value)) {
-        availableItems[inputName.value].setQuantity(inputQuantity.value)
-        displayItems()
-        return
+    if (!checkItemInList(inputName.value)) {
+        addedItems.push(availableItems[inputName.value]);
     }
 
-    addedItems.push(availableItems[inputName.value]);
     availableItems[inputName.value].setQuantity(inputQuantity.value)
+    let subTotal = (calculateSubTotal(addedItems)).toFixed(2);
+    let discountPercentage = getDiscount()
+    discountPercentage = calculateIva(subTotal, discountPercentage)
+    let total = (subTotal - discountPercentage).toFixed(2)
+    displayTotal(subTotal, discountPercentage, total)
     displayItems()
+}
+
+function getDiscount() {
+    if (inputDiscount.value === "") {
+        return 0;
+    }
+    return inputDiscount.value;
+}
+
+function calculateIva(subTotal, discount) {
+    return Number(((subTotal * discount) / 100).toFixed(2));
 }
 
 function checkItemInList(item) {
     if (addedItems.length === 0) {
         return false
     }
-    return addedItems.every((pan) =>  item == pan.name) 
+    let count = 0
+    addedItems.forEach(pan =>  {
+        if (pan.name === item) {
+            count++ 
+            return
+        }
+    })
+    return (count === 0) ? false : true;
+}
+
+function displayTotal(subTotal, iva, total) {
+    totalTable.innerHTML = `<tr>
+        <td>$${subTotal}</td>
+        <td>$${iva}</td>
+        <td>$${total}</td>
+    </tr>`;
 }
 
 
@@ -90,7 +127,22 @@ function displayItems() {
     inputQuantity.value = ''
 }
 
-btnAddItem.addEventListener("click", addItems);
+function displayClientInfo() {
+    clientInfoTabl.innerHTML = `
+    <tr>
+        <td>Nombre: ${clientsName.value}</td>
+        <td>Tlf: ${phoneNumber.value}</td>
+        <td>Dirección: ${clientsAddress.value}</td>
+    </tr>`
+}
+
+function calculateSubTotal(items) {
+    let allPrices = 0;
+    items.forEach((value) => {
+        allPrices += Number(value.getTotal());
+    });
+    return allPrices;
+}
 
 function checkInputs() {
     if (inputQuantity.value.length === 0 || isNaN(inputQuantity.value)) {
@@ -102,3 +154,6 @@ function checkInputs() {
 
     return true;
 }
+
+btnAddClient.addEventListener("click", displayClientInfo)
+btnAddItem.addEventListener("click", addItems);
