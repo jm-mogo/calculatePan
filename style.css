@@ -1,0 +1,125 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    appearance: none;
+    background-color: #e1f1ef;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    width: 280px;
+    padding: 5px;
+    height: 32px;
+    border: 1px solid;
+    border-radius: 4px;
+    border-color: #585f5e;
+    margin-top: 2px;
+}
+
+select {
+    appearance: none;
+    background-color: #e1f1ef;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    width: 280px;
+    padding: 5px;
+    height: 32px;
+    border: 1px solid;
+    border-radius: 4px;
+    border-color: #585f5e;
+    margin-top: 2px;
+}
+
+
+.container {
+    width: 920px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.input-items {
+    height: 280px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.input-items>div {
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.invalid-data {
+    border: solid 2px;
+    border-color: #bb1515;
+    box-shadow: 1px 0px 2px #a1a1a1;
+}
+
+.invalid-data+span::after {
+    content: "*Enter a number";
+    color: #bb1515;
+    font-size: .8rem;
+}
+
+.btn-action {
+    width: 120px;
+    height: 40px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    background-color: #e1f1ef;
+    color: #161b1a;
+    font-weight: bold;
+    border: solid #2a554e 2px;
+    border-radius: 22px;
+    align-self: center;
+}
+
+.btn-action:hover {
+    background-color: #8beee7;
+}
+
+/* table styles*/
+table {
+    width: 620px;
+}
+
+th,
+td {
+    padding: 7px 10px 10px 10px;
+}
+
+th {
+    background-color: grey;
+}
+
+tr {
+    background-color: rgb(223, 223, 223);
+}
+
+th {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 90%;
+    text-align: left;
+}
+
+tr:hover {
+    background-color: #c3e6e5;
+}

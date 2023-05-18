@@ -5,11 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="reset.css">
+    
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <h1>Pan calculator</h1>
+    <div class="container">
+        <fieldset class="input-items">
+            <div>
+                <div class="input-div">
+                    <label for="PanName">Elija el tipo de pan:</label>
+                    <select id="panName" name="panName">
+                        <option value="blanco">Blanco</option>
+                        <option value="mantequilla">Mantequilla</option>
+                        <option value="integral">Integral</option>
+                        <option value="avena">Avena</option>
+                        <option value="chia">Chia y linaza</option>
+                        <option value="pasas">Pasas</option>
+                    </select>
+                    <span></span>
+                </div>
+                <div class="input-div">
+                    <label for="quantity">Ingrese la cantidad de pan:</label>
+                    <input type="number" id="quantity">
+                    <span></span>
+                </div>
+            </div>
+            <button class="btn-action" id="btn-add-item">Add item</button>
+        </fieldset>
+        <div>
+            <table id="items-table">
+                <tr>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th scope="col">Sub total</th>
+                    <th scope="col">Descuento</th>
+                    <th scope="col">Total</th>
+                </tr>
+                <tr id="total-table">
+                    <td>$0</td>
+                    <td>$0</td>
+                    <td>$0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
