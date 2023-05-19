@@ -1,5 +1,5 @@
 //inputsPan
-const inputName = document.getElementById('panName');
+const inputPanName = document.getElementById('pan-name');
 const inputQuantity = document.getElementById("quantity");
 const inputDiscount = document.getElementById('discount-percentage');
 
@@ -50,11 +50,11 @@ function addItems() {
     if (!checkInputs()) {
         return
     }
-    if (!checkItemInList(inputName.value)) {
-        addedItems.push(availableItems[inputName.value]);
+    if (!checkItemInList(inputPanName.value)) {
+        addedItems.push(availableItems[inputPanName.value]);
     }
 
-    availableItems[inputName.value].setQuantity(inputQuantity.value)
+    availableItems[inputPanName.value].setQuantity(inputQuantity.value)
     let subTotal = (calculateSubTotal(addedItems)).toFixed(2);
     let discountPercentage = getDiscount()
     discountPercentage = calculateIva(subTotal, discountPercentage)

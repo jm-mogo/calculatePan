@@ -5,90 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Pan calculator</h1>
-    <div class="container">
-        <fieldset class="input-items">
+
+    <form>
+        <section class="client-section">
+            <h2>Información del cliente</h2>
+            
             <div>
-                <div class="input-div">
-                    <label for="client-name">Nombre:</label>
-                    <input type="text" id="client-name">
-                    <span></span>
-                </div>
-                <div class="input-div">
-                    <label for="phone">Teléfono:</label>
-                    <input type="tel" id="phone">
-                    <span></span>
-                </div>
-                <div class="input-div">
-                    <label for="address">Dirección:</label>
-                    <input type="text" id="address">
-                    <span></span>
-                </div>
+                <label for="client-name"">
+                    <span class="span-name"></span>
+                </label>
+                <input type="text" id="client-name" placeholder="Nombre">
             </div>
-            <button class="btn-action" id="add-client-info">Add item</button>
-        </fieldset>
-        <fieldset class="input-items">
+
             <div>
-                <div class="input-div">
-                    <label for="panName">Elija el tipo de pan:</label>
-                    <select id="panName" name="panName">
-                        <option value="blanco">Blanco</option>
-                        <option value="mantequilla">Mantequilla</option>
-                        <option value="integral">Integral</option>
-                        <option value="avena">Avena</option>
-                        <option value="chia">Chia y linaza</option>
-                        <option value="pasas">Pasas</option>
-                    </select>
-                    <span></span>
-                </div>
-                <div class="input-div">
-                    <label for="quantity">Ingrese la cantidad de pan:</label>
-                    <input type="number" id="quantity">
-                    <span></span>
-                </div>
-                <div class="input-div">
-                    <label for="discount-percentage">Ingrese el porcentaje de descuento:</label>
-                    <input type="number" id="discount-percentage">
-                    <span></span>
-                </div>
+                <label for="phone"">
+                    <span class="span-phone"></span>
+                </label>
+                <input type="tel" id="phone" placeholder="Teléfono">
             </div>
-            <button class="btn-action" id="btn-add-item">Add item</button>
-        </fieldset>
-        
-        <div>
-            <table id="client-info-table">
-                <tr>
-                    <td>Nombre: </td>
-                    <td>Tlf: </td>
-                    <td>Dirección: </td>
-                </tr>
-            </table>
-            <table id="items-table">
-                <tr>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Total</th>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <th scope="col">Sub total</th>
-                    <th scope="col">Descuento</th>
-                    <th scope="col">Total</th>
-                </tr>
-                <tr id="total-table">
-                    <td>$0</td>
-                    <td>$0</td>
-                    <td>$0</td>
-                </tr>
-            </table>
-        </div>
-    </div>
+            
+            <div>
+                <label for="address"">
+                    <span class="span-address"></span>
+                </label>
+                <input type="text" id="address" placeholder="Dirección">
+            </div>
+        <button type="button"">Añadir</button>
+        </section>
+
+        <section>
+            <h2>Pedido</h2>
+
+            <div>
+                <label for="pan-name">Tipo de pan:</label>
+                <select id="panName" name="pan-name">
+                    <option value="blanco">Blanco</option>
+                    <option value="mantequilla">Mantequilla</option>
+                    <option value="integral">Integral</option>
+                    <option value="avena">Avena</option>
+                    <option value="chia">Chia y linaza</option>
+                    <option value="pasas">Pasas</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="quantity">Cantidad:</label>
+                <input type="number" id="quantity">
+            </div>
+
+            <div>
+                <label for="discount-percentage">Porcentaje:</label>
+                <input type="number" id="discount-percentage">
+            </div>
+        </section>
+    </form>
+
 </body>
 </html>

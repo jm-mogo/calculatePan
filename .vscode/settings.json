@@ -4,12 +4,18 @@
         "blanco",
         "cantidad",
         "Descuento",
+        "Dirección",
         "Elija",
+        "Información",
         "Ingrese",
         "linaza",
         "mantequilla",
+        "Nombre",
         "pasas",
+        "porcentaje",
         "Precio",
+        "Teléfono",
         "tipo"
-    ]
+    ],
+    "cSpell.language": "en,lorem"
 }
