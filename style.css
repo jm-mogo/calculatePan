@@ -7,31 +7,38 @@ form {
     flex-direction: column;
     align-items: center;
 }
-.client-section {
+
+.client-section,
+.pedido-section {
     width: 400px;
-    height: 260px;
-    border-radius: 10px;
     background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+}
+
+.client-section {
+    height: 260px;
     display: flex;
     flex-direction: column;
     align-items:center;
 }
 
-.client-section h2 {
+.client-section h2,
+.pedido-section h2 {
     text-align: center;
     font-size: 28px;
     padding: 12px;
     margin-bottom: 12px;
 }
 
-.client-section > div {
+.client-section > div,
+.input-type-pan > div{
     display: flex;
     flex-direction: column;
     padding: 4px;
 }
 
-.client-section > div > input {
-    appearance: none;
+.client-section > div > input,
+.input-quantity-discount > div > input {
     background-color: #fefefe;
     font-size: 1rem;
     box-sizing: border-box;
@@ -46,8 +53,8 @@ form {
 
 .client-section > div > label > span {
     position: absolute;
-    width: 28px;
-    height: 28px;
+    width: 27px;
+    height: 27px;
     margin-top: 6px;
     margin-left: -36px;
 }
@@ -64,7 +71,7 @@ form {
     background: url(svgIcons/location-dot-solid.svg) no-repeat center ;
 }
 
-button {
+.btn-client {
     border: none;
     margin-top: 12px;
     font-size: 1rem;
@@ -74,4 +81,43 @@ button {
     color: #f3f3f3;
     background-color: #51848d;
     box-shadow: 1px 1px 5px #1a1919;
+}
+
+.pedido-section {
+    margin-top: 20px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-type-pan > div > select {
+    background-color: #fefefe;
+    font-size: 1rem;
+    box-sizing: border-box;
+    width: 280px;
+    padding: 5px;
+    height: 32px;
+    border: 1px solid;
+    border-radius: 4px;
+    border-color: #d1cfcf;
+    margin-top: 4px;
+}
+
+.input-quantity-discount {
+    width: 280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.input-quantity-discount > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-quantity-discount > div > input {
+    width: 120px;
 }

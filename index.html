@@ -35,32 +35,34 @@
                 </label>
                 <input type="text" id="address" placeholder="Dirección">
             </div>
-        <button type="button"">Añadir</button>
+        <button type="button"" class="btn-client">Añadir</button>
         </section>
 
-        <section>
-            <h2>Pedido</h2>
-
-            <div>
-                <label for="pan-name">Tipo de pan:</label>
-                <select id="panName" name="pan-name">
-                    <option value="blanco">Blanco</option>
-                    <option value="mantequilla">Mantequilla</option>
-                    <option value="integral">Integral</option>
-                    <option value="avena">Avena</option>
-                    <option value="chia">Chia y linaza</option>
-                    <option value="pasas">Pasas</option>
-                </select>
+        <section class="pedido-section">
+            <h2>Pedido de pan</h2>
+            <div class="input-type-pan">
+                <div >
+                    <label for="pan-name">Tipo:</label>
+                    <select id="panName" name="pan-name">
+                        <option value="blanco">Blanco</option>
+                        <option value="mantequilla">Mantequilla</option>
+                        <option value="integral">Integral</option>
+                        <option value="avena">Avena</option>
+                        <option value="chia">Chia y linaza</option>
+                        <option value="pasas">Pasas</option>
+                    </select>
+                </div>
             </div>
-
-            <div>
-                <label for="quantity">Cantidad:</label>
-                <input type="number" id="quantity">
-            </div>
-
-            <div>
-                <label for="discount-percentage">Porcentaje:</label>
-                <input type="number" id="discount-percentage">
+            <div class="input-quantity-discount">
+                <div>
+                    <label for="quantity">Cantidad:</label>
+                    <input type="number" id="quantity">
+                </div>
+    
+                <div>
+                    <label for="discount-percentage">Porcentaje:</label>
+                    <input type="number" id="discount-percentage">
+                </div>
             </div>
         </section>
     </form>
