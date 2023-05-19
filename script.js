@@ -20,15 +20,10 @@ const clientInfoTabl = document.getElementById("client-info-table");
 //Factory function to create pan types
 const pan = (name, price) => {
     let quantity = 0;
-    const getTotal = () => {
-        return (quantity * price).toFixed(2);
-    }
-    const setQuantity = (newQuantity) => {
-        quantity = newQuantity;
-    } 
-    const getQuantity = () => {
-        return quantity;
-    }
+
+    const getTotal = () => (quantity * price).toFixed(2);    
+    const setQuantity = (newQuantity) => quantity = newQuantity; 
+    const getQuantity = () => quantity;
 
     return { name, price, getTotal, setQuantity, getQuantity};
 };
