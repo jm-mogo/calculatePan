@@ -15,7 +15,7 @@ const btnAddClient = document.getElementById("add-client-info")
 //Dom manipulation
 const itemsTable = document.getElementById("items-table");
 const totalTable = document.getElementById("total-table");
-const clientInfoTabl = document.getElementById("client-info-table");
+const clientInfoTable = document.getElementById("client-info-table");
 
 //Factory function to create pan types
 const pan = (name, price) => {
@@ -123,7 +123,7 @@ function displayItems() {
 }
 
 function displayClientInfo() {
-    clientInfoTabl.innerHTML = `
+    clientInfoTable.innerHTML = `
     <tr>
         <td>Nombre: ${clientsName.value}</td>
         <td>Tlf: ${phoneNumber.value}</td>
