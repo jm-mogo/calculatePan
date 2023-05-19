@@ -85,7 +85,7 @@ form {
 
 .pedido-section {
     margin-top: 20px;
-    height: 240px;
+    height: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,5 +119,37 @@ form {
 }
 
 .input-quantity-discount > div > input {
-    width: 120px;
+    width: 128px;
+}
+
+.btn-pedido {
+    border: none;
+    margin-top: 12px;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #f3f3f3;
+    background-color: #51848d;
+    box-shadow: 1px 1px 5px #1a1919;
+    transition: 0.2s;
+}
+
+.btn-client:active,
+.btn-pedido:active {
+    box-shadow: 1px 1px 5px #c4c4c4;
+}
+
+.div-discount::after {
+    content: "%";
+    font-size: 22px;
+    position: absolute;
+    margin-top: 18px;
+    margin-left: 102px;
+    transition: all .05s ease-in-out;
+}
+
+.div-discount:hover::after,
+.div-discount:focus-within::after {
+    margin-left: 84px;
 }
