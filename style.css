@@ -44,12 +44,24 @@ form {
     margin-top: 4px;
 }
 
-.client-section > div > label > img {
+.client-section > div > label > span {
     position: absolute;
     width: 28px;
     height: 28px;
     margin-top: 6px;
     margin-left: -36px;
+}
+
+.span-name {
+    background: url(svgIcons/user-solid.svg) no-repeat center;
+}
+
+.span-phone {
+    background: url(svgIcons/phone-solid.svg) no-repeat center;
+}
+
+.span-address {
+    background: url(svgIcons/location-dot-solid.svg) no-repeat center ;
 }
 
 button {
