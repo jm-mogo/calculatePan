@@ -42,8 +42,8 @@
             <h2>Pedido de pan</h2>
             <div class="input-type-pan">
                 <div >
-                    <label for="pan-name">Tipo:</label>
-                    <select id="panName" name="pan-name">
+                    <label for="pan-name"">Tipo:</label>
+                    <select id="pan-name" name="pan-name">
                         <option value="blanco">Blanco</option>
                         <option value="mantequilla">Mantequilla</option>
                         <option value="integral">Integral</option>
@@ -65,9 +65,110 @@
                     
                 </div>
             </div>
-            <button type="button" class="btn-pedido">+</button>
+            <button type="button" class="btn-pedido" id="btn-add-item"">+</button>
         </section>
     </form>
 
+
+    <div class="bill-container" id="print">
+
+        <div class="header">
+            <div class="title-header">
+                <h2>"Nombre de panadería"</h2>
+            </div>
+
+            <div class="info-header">
+                <p>Dirección de la iglesia</p>
+                <p>0414-2363131</p>
+            </div>
+
+        </div>
+        
+        <div class="bill-data">
+            <div class="bill-client-info">
+                <h4>Cliente:</h4>
+                <h3>José Mogollón</h3>
+                <!-- <img src="svgIcons/location-dot-solid.svg" alt=""> -->
+                <p>El Junquito</p>
+            </div>
+            <div class="bill-date-number">
+                <p>Fecha: 20 de mayo de 2023</p>
+                <p>Número de orden: 10234821</p>
+            </div>
+        </div>
+    
+        <div class="items-table">
+            <table id="items-table">
+                <!-- <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio Unitario</th>
+                    <th scope="col">Total</th>
+                </tr>
+                <tr>
+                    <td>000</td>
+                    <td>Pan</td>
+                    <td>Mucha</td>
+                    <td>Pa ti barato</td>
+                    <td>cuando pueda</td>
+                </tr>
+                <tr>
+                    <td>000</td>
+                    <td>Pan</td>
+                    <td>Mucha</td>
+                    <td>Pa ti barato</td>
+                    <td>cuando pueda</td>
+                </tr>
+                <tr>
+                    <td>000</td>
+                    <td>Pan</td>
+                    <td>Mucha</td>
+                    <td>Pa ti barato</td>
+                    <td>cuando pueda</td>
+                </tr>
+                <tr>
+                    <td>000</td>
+                    <td>Pan</td>
+                    <td>Mucha</td>
+                    <td>Pa ti barato</td>
+                    <td>cuando pueda</td>
+                </tr> -->
+            </table>
+        </div>
+        <div class="total-table">
+            <table>
+                <tr>
+                    <th scope="col">Sub total</th>
+                    <th scope="col">Descuento</th>
+                    <th scope="col">Total</th>
+                </tr>
+                <tr id="total-table-result">
+                    <td>$0</td>
+                    <td>$0</td>
+                    <td>$0</td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer">
+            <hr>
+            <div class="condiciones">
+                <h2>Conndiciones de pago:</h2>
+                <p>Realizar pago en un plazo de 7 días</p>
+            </div>
+            
+            <div class="pago-movil">
+                <h2>Pago móvil:</h2>
+                <p>Banco: Venezuela</p>
+                <p>C.I.: 19.777.720</p>
+                <p>Tlf: 0424-7362591</p>
+            </div>
+        </div>
+    </div>
+    <div class="btn-div">
+        <button id="btn-print">Print</button>
+    </div>
+    
+    
 </body>
 </html>

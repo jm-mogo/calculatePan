@@ -9,32 +9,31 @@ const phoneNumber = document.getElementById('phone');
 const clientsAddress =document.getElementById('address');
 
 //buttons 
-const btnAddItem = document.getElementById("btn-add-item");
 const btnAddClient = document.getElementById("add-client-info") 
+const btnAddItem = document.getElementById("btn-add-item");
 
 //Dom manipulation
 const itemsTable = document.getElementById("items-table");
-const totalTable = document.getElementById("total-table");
+const totalTable = document.getElementById("total-table-result");
 const clientInfoTable = document.getElementById("client-info-table");
 
 //Factory function to create pan types
-const pan = (name, price) => {
+const pan = (name, price, id) => {
     let quantity = 0;
-
     const getTotal = () => (quantity * price).toFixed(2);    
     const setQuantity = (newQuantity) => quantity = newQuantity; 
     const getQuantity = () => quantity;
-
-    return { name, price, getTotal, setQuantity, getQuantity};
+    const getId = () => id;
+    return { name, price, getTotal, setQuantity, getQuantity, getId};
 };
 
 //Creating different pan types
-const blanco = pan('blanco', 1.52);
-const mantequilla = pan('mantequilla', 2);
-const integral = pan('integral', 1,70);
-const avena = pan('avena', 1.70);
-const chia = pan('chia y linaza', 1.70);
-const pasas = pan('pasas', 2.00);
+const blanco = pan('blanco', 1.52, 100);
+const mantequilla = pan('mantequilla', 2.00, 101);
+const integral = pan('integral', 1.70, 102);
+const avena = pan('avena', 1.70, 103);
+const chia = pan('chia y linaza', 1.70, 104);
+const pasas = pan('pasas', 2.00, 105);
 
 const availableItems = {
     'blanco': blanco,
@@ -101,19 +100,23 @@ function displayItems() {
     itemsTable.innerHTML = '';
     let items = []
     let firstRow = document.createElement('tr');
-    firstRow.innerHTML = `<th scope="col">Tipo</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">Total</th>`
+    firstRow.innerHTML = `<th scope="col">Item</th>
+                        <th scope="col">Cod.</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col" class="number-table">Cantidad</th>
+                        <th scope="col" class="number-table">Precio unitario</th>
+                        <th scope="col" class="number-table">Total</th>`
 
     items.push(firstRow);
 
     for (let i = 0; i < addedItems.length; i++) {
         let newRow = document.createElement('tr');
-        newRow.innerHTML = `<td scope="row">Pan ${addedItems[i].name}</td>
-                            <td>${addedItems[i].getQuantity()}</td>
-                            <td>$${addedItems[i].price}</td>
-                            <td>$${addedItems[i].getTotal()}</td>`
+        newRow.innerHTML = `<td>${i + 1}</td>
+                            <td >${addedItems[i].getId()}</td>
+                            <td scope="row">Pan ${addedItems[i].name}</td>
+                            <td class="number-table">${addedItems[i].getQuantity()}</td>
+                            <td class="number-table">$${(addedItems[i].price).toFixed(2)}</td>
+                            <td class="number-table">$${addedItems[i].getTotal()}</td>`
         items.push(newRow)
     }
     items.forEach(item => {
@@ -150,5 +153,23 @@ function checkInputs() {
     return true;
 }
 
-btnAddClient.addEventListener("click", displayClientInfo)
+//btnAddClient.addEventListener("click", displayClientInfo)
 btnAddItem.addEventListener("click", addItems);
+
+//print
+
+const printBtn = document.getElementById('btn-print');
+const printDiv = document.getElementById('print')
+
+function printF() {
+    let printWindow = window.open('', '', 'width=800, height=500, toolbar=0, scrollbars=0, status=0');
+    printWindow.document.write( "<link rel=\"stylesheet\" href=\"reset.css\" type=\"text/css\" media=\"all\"/>" );
+    printWindow.document.write( "<link rel=\"stylesheet\" href=\"style.css\" type=\"text/css\" media=\"all\"/>" );
+    printWindow.document.write(printDiv.innerHTML);
+    
+    printWindow.focus();
+    setTimeout(function(){printWindow.print();},1500);
+    printWindow.document.close();
+}
+
+printBtn.addEventListener('click', printF)
