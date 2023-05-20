@@ -15,7 +15,7 @@ const btnAddItem = document.getElementById("btn-add-item");
 //Dom manipulation
 const itemsTable = document.getElementById("items-table");
 const totalTable = document.getElementById("total-table-result");
-const clientInfoTable = document.getElementById("client-info-table");
+const clientInfoBill = document.getElementById("bill-client-info");
 
 //Factory function to create pan types
 const pan = (name, price, id) => {
@@ -126,12 +126,10 @@ function displayItems() {
 }
 
 function displayClientInfo() {
-    clientInfoTable.innerHTML = `
-    <tr>
-        <td>Nombre: ${clientsName.value}</td>
-        <td>Tlf: ${phoneNumber.value}</td>
-        <td>Dirección: ${clientsAddress.value}</td>
-    </tr>`
+ clientInfoBill.innerHTML = `
+                <h4>Cliente:</h4>
+                <h3>${clientsName.value}</h3>
+                <p>${clientsAddress.value}</p>`
 }
 
 function calculateSubTotal(items) {
@@ -153,7 +151,7 @@ function checkInputs() {
     return true;
 }
 
-//btnAddClient.addEventListener("click", displayClientInfo)
+btnAddClient.addEventListener("click", displayClientInfo)
 btnAddItem.addEventListener("click", addItems);
 
 //print
