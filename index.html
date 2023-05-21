@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" media="print">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -134,16 +134,21 @@
             </table>
         </div>
         <div class="total-table">
-            <table>
+            <table id="total-table-result">
                 <tr>
-                    <th scope="col">Sub total</th>
-                    <th scope="col">Descuento</th>
-                    <th scope="col">Total</th>
+                    <th class="number-table" scope="row">Subtotal:</td>
+                    <td></td>
+                    <td class="number-table">$100</td>
                 </tr>
-                <tr id="total-table-result">
-                    <td>$0</td>
-                    <td>$0</td>
-                    <td>$0</td>
+                <tr>
+                    <th class="number-table" scope="row">Descuento:</td>
+                    <td class="porcentaje-columna">0%</td>
+                    <td class="number-table">$0</td>
+                </tr>
+                <tr>
+                    <th class="number-table" scope="row">Total:</td>
+                    <td></td>
+                    <td class="number-table">$0</td>
                 </tr>
             </table>
         </div>

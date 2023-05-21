@@ -175,6 +175,7 @@ form {
     padding: 20px;
     background-color: #777676;
     color: #f3f3f3;
+    margin-bottom: 100px;
 }
 
 .title-header {
@@ -225,6 +226,28 @@ th, td {
     justify-content: flex-end;
     margin-right: 20px;
     margin-bottom: 20px;
+}
+
+.total-table th,
+.total-table td {
+    
+    color: #1a1919;
+    background-color: #ffffff;
+    padding: 12px;
+}
+
+.negative th,
+.negative td {
+    color: red;
+}
+
+.total-table td {
+    min-width: 140px;
+}
+
+.total-total {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .number-table {

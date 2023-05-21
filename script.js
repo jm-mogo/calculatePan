@@ -88,11 +88,19 @@ function checkItemInList(item) {
 }
 
 function displayTotal(subTotal, iva, total) {
-    totalTable.innerHTML = `<tr>
-        <td>$${subTotal}</td>
-        <td>$${iva}</td>
-        <td>$${total}</td>
-    </tr>`;
+    totalTable.innerHTML = `
+                <tr>
+                    <th class="number-table" scope="row">SubTotal:</td>
+                    <td class="number-table">$${subTotal}</td>
+                </tr>
+                <tr class="negative">
+                    <th class="number-table" scope="row">Descuento (${inputDiscount.value}%):</td>
+                    <td class="number-table">- $${iva}</td>
+                </tr>
+                <tr>
+                    <th class="number-table total-total" scope="row" >TOTAL:</td>
+                    <td class="number-table total-total">$${total}</td>
+                </tr>`;
 }
 
 
@@ -105,7 +113,7 @@ function displayItems() {
                         <th scope="col">Descripción</th>
                         <th scope="col" class="number-table">Cantidad</th>
                         <th scope="col" class="number-table">Precio unitario</th>
-                        <th scope="col" class="number-table">Total</th>`
+                        <th scope="col" class="number-table">Total Item</th>`
 
     items.push(firstRow);
 
@@ -163,6 +171,8 @@ function printF() {
     let printWindow = window.open('', '', 'width=800, height=500, toolbar=0, scrollbars=0, status=0');
     printWindow.document.write( "<link rel=\"stylesheet\" href=\"reset.css\" type=\"text/css\" media=\"all\"/>" );
     printWindow.document.write( "<link rel=\"stylesheet\" href=\"style.css\" type=\"text/css\" media=\"all\"/>" );
+    printWindow.document.write( "<meta charset=\"UTF-8\">" );
+    printWindow.document.write( "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"></meta>" );
     printWindow.document.write(printDiv.innerHTML);
     
     printWindow.focus();
