@@ -16,6 +16,7 @@ const btnAddItem = document.getElementById("btn-add-item");
 const itemsTable = document.getElementById("items-table");
 const totalTable = document.getElementById("total-table-result");
 const clientInfoBill = document.getElementById("bill-client-info");
+const billDate = document.getElementById('bill-date');
 
 //Factory function to create pan types
 const pan = (name, price, id) => {
@@ -134,7 +135,8 @@ function displayItems() {
 }
 
 function displayClientInfo() {
- clientInfoBill.innerHTML = `
+billDate.textContent = getToday()
+clientInfoBill.innerHTML = `
                 <h4>Cliente:</h4>
                 <h3>${clientsName.value}</h3>
                 <p>${clientsAddress.value}</p>`
@@ -181,3 +183,14 @@ function printF() {
 }
 
 printBtn.addEventListener('click', printF)
+
+//Date 
+function getToday() {
+    const today = new Date();
+    const monthNames = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+    const day = today.getDate();
+    const month = today.getMonth();
+    const year = today.getFullYear();
+
+    return `${day} de ${monthNames[month]} de ${year}`;
+}
